@@ -1,0 +1,71 @@
+<div class="container">
+    <form [formGroup]="createServerForm" (ngSubmit)="onSubmit(createServerForm.value)" novalidate>
+        <h1>Create Server</h1>
+        <div class="row">
+            <div class="col-25">
+                <label for="name">Server Name</label>
+            </div>
+            <div class="col-75 form-group">
+                <input type="text" formControlName="name" required maxlength="256" class="form-control" placeholder="Name" autocomplete="name"
+                    required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="description">Description</label>
+            </div>
+            <div class="col-75 form-group">
+                <input type="text" formControlName="description" maxlength="256" class="form-control" placeholder="Description"
+                    autocomplete="description" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="status">Status</label>
+            </div>
+            <div class="col-75 form-group">
+                <mat-form-field appearance="fill">
+                    <mat-select formControlName="status" class="form-control">
+                        <mat-option *ngFor="let status of statusList" [value]="status.value">
+                            {{status.displayVal}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="server_ip">IP Address</label>
+            </div>
+            <div class="col-75 form-group">
+                <input type="text" formControlName="server_ip" class="form-control" placeholder="server_ip"
+                    autocomplete="server_ip" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="server_nat_ip">Nat IP</label>
+            </div>
+            <div class="col-75 form-group">
+                <input type="text" formControlName="server_nat_ip" class="form-control" placeholder="server_nat_ip"
+                    autocomplete="server_nat_ip" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="nat_space_id">Nat Space Id</label>
+            </div>
+            <div class="col-75 form-group">
+                <input type="text" formControlName="nat_space_id" class="form-control" placeholder="nat_space_id"
+                    autocomplete="nat_space_id" required>
+            </div>
+        </div>
+        <button type="button" (click)="onCancelClick()" class="btn" >
+            Cancel
+        </button>
+        <button type="submit" class="btn btn-primary" >
+            {{formAction}}
+        </button>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+.demo-table {
+    width: 100%;
+}
+
+.container {
+    margin: 70px 10px 10px 10px;
+    border: 1px solid;
+}
+
+.checkbox {
+    width: 10px;
+}
+
+.action-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.button-sep {
+    margin: 2px;
+}
+.button-main {
+    width:100px;
+}
+
+.align-right{
+    float: right;
+}
+
+.server {
+    border: 1px solid;
+}
